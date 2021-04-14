@@ -24,7 +24,7 @@ class Drink
 end
 
 class VendingMachine
-  attr_reader :total_money, :sale_amount, :stocks, :drinks
+  attr_reader :total_money, :sale_amount  #, :stocks, :drinks
   MONEY = [10, 50, 100, 500, 1000].freeze
   def initialize
     @total_money = 0
@@ -96,4 +96,11 @@ class VendingMachine
     @drinks[name.to_sym]
   end
 end
+@vm = VendingMachine.new
+puts @vm.drink_stocks[0][:stock] #0:cola 1:water 2:redbull
+puts @vm.drink_stocks[0][:drink].name 
+puts @vm.drink_stocks[0][:drink].price
+puts @vm.find_drink_by_name(Drink.cola.name).name
 
+@vm.buy(Drink.cola)
+puts @vm.drink_stocks[0][:stock]

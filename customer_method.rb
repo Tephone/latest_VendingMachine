@@ -3,12 +3,12 @@ def buy_process(number)
   if @vm.total_money < drink.price
     puts "お金が足りません"
     exit
-  elsif @vm.stocks[drink.name.to_sym] == 0
+  elsif @vm.drink_stocks[number - 1][:stock] == 0
     puts "#{drink.name}の在庫がありません"
     exit
   else
     @vm.buy(drink)
-    puts 'ガチャン！コーラをお買い上げいただきありがとうございます'
+    puts "ガチャン！#{drink.name}をお買い上げいただきありがとうございます"
     puts "残り#{@vm.total_money}円分購入可能です"
   end
 end

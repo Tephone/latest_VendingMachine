@@ -16,7 +16,7 @@ elsif number == 1
   insert_money_process
   while true
     puts '何を飲みたいですか？'
-    puts '1:コーラ'
+    puts '1:cola'
     puts '2:お水'
     puts '3:レッドブル'
     drink_number = gets.to_i
