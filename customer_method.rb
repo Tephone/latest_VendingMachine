@@ -1,9 +1,13 @@
-def buy_process(number)
-  drink = @vm.find_drink_by_index(number - 1)
+require "thor"
+require "pry"
+
+def buy_process(drink_name)
+  #binding.pry
+  drink = @vm.find_drink_by_name(drink_name)
   if @vm.total_money < drink.price
     puts "お金が足りません"
     exit
-  elsif @vm.drink_stocks[number - 1][:stock] == 0
+  elsif @vm.find_stocks_by_name(drink_name) == 0
     puts "#{drink.name}の在庫がありません"
     exit
   else
