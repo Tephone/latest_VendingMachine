@@ -24,7 +24,7 @@ class Drink
 end
 
 class VendingMachine
-  attr_reader :total_money, :sale_amount, :stocks, :drinks
+  attr_reader :total_money, :sale_amount  #, :stocks, :drinks
   MONEY = [10, 50, 100, 500, 1000].freeze
   def initialize
     @total_money = 0
@@ -95,5 +95,28 @@ class VendingMachine
   def find_drink_by_name(name) # 名前からDrinkオブジェクトを探す
     @drinks[name.to_sym]
   end
-end
 
+  # def find_stocks_by_name(drink_name)
+  #   drink_stocks.each do |x|
+  #     if x[:drink].name == drink_name
+  #       return x[:stock]
+  #     end
+  #   end
+  # end
+end
+# @vm = VendingMachine.new
+# puts @vm.drink_stocks[0][:stock] #0:cola 1:water 2:redbull
+# puts @vm.drink_stocks[0][:drink].name 
+# puts @vm.drink_stocks[0][:drink].price
+# puts @vm.find_drink_by_name(Drink.cola.name).name
+
+# @vm.buy(Drink.cola)
+# puts @vm.drink_stocks[0][:stock]
+# puts ""
+# puts @vm.drink_stocks.map { |h| h[:drink]}
+# puts ""
+# puts @vm.find_stocks_by_name(Drink.cola.name)
+# puts ""
+# puts drink = @vm.find_drink_by_name("cola")
+# puts drink.name
+#puts @vm.in_stock?(Drink.cola)

@@ -15,12 +15,12 @@ if number == 2
 elsif number == 1
   insert_money_process
   while true
-    puts '何を飲みたいですか？'
-    puts '1:コーラ'
-    puts '2:お水'
-    puts '3:レッドブル'
-    drink_number = gets.to_i
-    buy_process(drink_number)
+    puts '何が飲みたいですか？'
+    puts '以下メニューから飲みたいドリンク名を入力してください'
+    drink_menu 
+    drink_name = gets.chomp
+    #binding.pry
+    buy_process(drink_name.to_s)
     puts 'もう一ついかがですか？'
     puts '1:お言葉に甘えて'
     puts '2:もういらないよ'
