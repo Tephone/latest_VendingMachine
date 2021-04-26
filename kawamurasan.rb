@@ -96,15 +96,15 @@ class VendingMachine
     @drinks[name.to_sym]
   end
 
-  def find_stocks_by_name(drink_name)
-    drink_stocks.each do |x|
-      if x[:drink].name == drink_name
-        return x[:stock]
-      end
-    end
-  end
+  # def find_stocks_by_name(drink_name)
+  #   drink_stocks.each do |x|
+  #     if x[:drink].name == drink_name
+  #       return x[:stock]
+  #     end
+  #   end
+  # end
 end
-# @vm = VendingMachine.new
+@vm = VendingMachine.new
 # puts @vm.drink_stocks[0][:stock] #0:cola 1:water 2:redbull
 # puts @vm.drink_stocks[0][:drink].name 
 # puts @vm.drink_stocks[0][:drink].price
@@ -119,3 +119,10 @@ end
 # puts ""
 # puts drink = @vm.find_drink_by_name("cola")
 # puts drink.name
+#puts @vm.in_stock?(Drink.cola)
+array = []
+@vm.drink_stocks.each do |object|
+  puts object[:drink].name
+  array << object[:drink].name
+end
+p array

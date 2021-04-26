@@ -17,7 +17,7 @@ elsif number == 1
   while true
     puts '何が飲みたいですか？'
     puts '以下メニューから飲みたいドリンク名を入力してください'
-    puts 'cola/water/redbull' 
+    drink_menu 
     drink_name = gets.chomp
     #binding.pry
     buy_process(drink_name.to_s)

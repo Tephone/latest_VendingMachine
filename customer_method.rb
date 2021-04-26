@@ -1,5 +1,6 @@
 require "thor"
 require "pry"
+require_relative 'kawamurasan'
 
 def buy_process(drink_name)
   #binding.pry
@@ -7,7 +8,7 @@ def buy_process(drink_name)
   if @vm.total_money < drink.price
     puts "お金が足りません"
     exit
-  elsif @vm.find_stocks_by_name(drink_name) == 0
+  elsif @vm.in_stock?(drink) == false #@vm.find_stocks_by_name(drink_name) == 0
     puts "#{drink.name}の在庫がありません"
     exit
   else
@@ -27,4 +28,12 @@ def insert_money_process
     @vm.insert(money)
     puts "#{money}円自動販売機に入れました"
   end
+end
+
+def drink_menu
+  array = []
+  @vm.drink_stocks.each do |object|
+    array << object[:drink].name
+  end
+  p array  
 end
