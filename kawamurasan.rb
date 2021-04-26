@@ -120,9 +120,3 @@ end
 # puts drink = @vm.find_drink_by_name("cola")
 # puts drink.name
 #puts @vm.in_stock?(Drink.cola)
-array = []
-@vm.drink_stocks.each do |object|
-  puts object[:drink].name
-  array << object[:drink].name
-end
-p array
