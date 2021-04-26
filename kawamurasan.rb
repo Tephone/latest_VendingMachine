@@ -104,7 +104,7 @@ class VendingMachine
   #   end
   # end
 end
-@vm = VendingMachine.new
+# @vm = VendingMachine.new
 # puts @vm.drink_stocks[0][:stock] #0:cola 1:water 2:redbull
 # puts @vm.drink_stocks[0][:drink].name 
 # puts @vm.drink_stocks[0][:drink].price
